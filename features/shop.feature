@@ -3,25 +3,25 @@ Feature: Keep track of inventory
 	I want to keep track of inventory
 
 Background:
-	Given a product t-shirt with quantity 100 in stock
-	Given a product short with quantity 50 in stock
+	Given a product pen with quantity 900 in stock
+	Given a product notebook with quantity 500 in stock
 
 Scenario: Customer buy one product
-	When customer buy t-shirt with quantity 2
-	Then t-shirt quantity in stock should be 98
+	When customer buy pens with quantity 12
+	Then pens quantity in stock should be 888
 
 Scenario: Customer buy multiple products
-	When customer buy t-shirt with quantity 4
-	And customer buy short with quantity 2
-	Then t-shirt quantity in stock should be 96
-	And short quantity in stock should be 48
+	When customer buy pens with quantity 5
+	And customer buy notebooks with quantity 3
+	Then pens quantity in stock should be 895
+	And notebooks quantity in stock should be 497
 
 Scenario: Re-order one product
-	When I order short with quantity 15
-	Then short quantity in stock should be 65
+	When I order pens with quantity 100
+	Then pens quantity in stock should be 1000
 
 Scenario: Re-order multiple product
-	When I order t-shirt with quantity 150
-	And I order short with quantity 100
-	Then t-shirt quantity in stock should be 250
-	Then short quantity in stock should be 150
+	When I order pens with quantity 120
+	And I order notebooks with quantity 80
+	Then pens quantity in stock should be 1020
+	Then notebooks quantity in stock should be 580
